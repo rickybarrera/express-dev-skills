@@ -4,12 +4,22 @@
      <title>skills</title>
      <link rel='stylesheet' href='/stylesheets/style.css' />
    </head>
+  
    <body>
      <h1></h1>
      <a href="/skills">Skills</a>
+     <ul>
      <% skills.forEach(function(s) { %>
       <li>
+        <form action="/skills/<%= s.id %>?_method=DELETE"
+          class="delete-form" method="POST">
+          <button type="submit">X</button>
+        </form>
         <a href="/skills/<%= s.id %>"><%= s.skill %></a>
         <% }); %>
+        
+      </li>
+    </ul>
+      <a href="/skills/new">Add Skill</a>
    </body>
  </html>
